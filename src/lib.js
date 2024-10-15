@@ -16,7 +16,7 @@ function findByName(city, keys, cities) {
     return response
 }
 
-function checkCapital(parseTree, keys, country) {
+function checkCapital(parseTree, country) {
     var city = parseTree._City.name
     var response = false
 

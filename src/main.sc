@@ -29,11 +29,10 @@ theme: /
     state: Letsplay
         # сгенерируем случайную страну
         script:
-            $session.keys = Object.keys($Countries);
-            log("My_country_value_name" + JSON.stringify($Countries[chooseRandCountryKey($session.keys)].value.name));
-            $session.country = $Countries[chooseRandCountryKey($session.keys)].value.name;
+            $session.keys = Object.keys($Geography);
+            $session.country = $Geography[chooseRandCountryKey($session.keys)];
             $session.score += 1;
-            $reactions.answer("Начнём. Угадай столицу\nСтрана {{$session.country}}");
+            $reactions.answer("Начнём. Угадай столицу {{$session.country.value.genCountry}}");
 
     state: CityPattern
         q!: * $City *

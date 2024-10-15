@@ -16,14 +16,11 @@ function findByName(city, keys, cities) {
     return response
 }
 
-function checkCity(parseTree, keys, cities) {
+function checkCapital(parseTree, keys, country) {
     var city = parseTree._City.name
     var response = false
 
-    keys.forEach(function(elem) {
-        if (cities[elem].value.name == city) {
-            response = true
-        }
-    })
+    if (country.value.name == city) response = true
+
     return response;
 }

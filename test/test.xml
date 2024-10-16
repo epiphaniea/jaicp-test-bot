@@ -33,4 +33,8 @@
         <a>Пока!</a>
     </test-case>
 
+    <test-case id="4">
+        <q>абракадабра</q>
+        <a state = "/NoMatch"/>
+     </test-case>
 </test>

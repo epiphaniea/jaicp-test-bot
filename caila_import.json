@@ -61,6 +61,14 @@
       "text" : "готов"
     }, {
       "text" : "готова"
+    }, {
+      "text" : "ага"
+    }, {
+      "text" : "угу"
+    }, {
+      "text" : "ок"
+    }, {
+      "text" : "окей"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -79,6 +87,12 @@
       "text" : "не сейчас"
     }, {
       "text" : "отказ"
+    }, {
+      "text" : "ой всё"
+    }, {
+      "text" : "надоело"
+    }, {
+      "text" : "неа"
     } ],
     "classificationRules" : {
       "refs" : [ ]
@@ -99,6 +113,32 @@
       "text" : "прекратить"
     }, {
       "text" : "остановить игру"
+    }, {
+      "text" : "ой всё"
+    }, {
+      "text" : "надоело"
+    } ],
+    "classificationRules" : {
+      "refs" : [ ]
+    },
+    "patterns" : [ ],
+    "priority" : 0
+  }, {
+    "path" : "/начать",
+    "enabled" : true,
+    "shared" : false,
+    "phrases" : [ {
+      "text" : "начать"
+    }, {
+      "text" : "начнем"
+    }, {
+      "text" : "заново"
+    }, {
+      "text" : "start"
+    }, {
+      "text" : "restart"
+    }, {
+      "text" : "запустить"
     } ],
     "classificationRules" : {
       "refs" : [ ]

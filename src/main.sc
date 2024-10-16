@@ -12,7 +12,7 @@ require: common.js
 theme: /
 
     state: Start
-        q!: $regex</start>
+        intent: /начать
         script:
             $session.score = 0;
             $session.asked = 0;
@@ -33,6 +33,7 @@ theme: /
             $session.keys = Object.keys($Geography);
             $session.country = $Geography[chooseRandCountryKey($session.keys)];
             $reactions.answer("Угадай столицу {{$session.country.value.genCountry}}");
+            $session.asked++;
 
     state: CityPattern
         q!: * $City *
@@ -40,21 +41,26 @@ theme: /
             if (checkCapital($parseTree, $session.country) == true) {
                 log("Correct answer");
                 $session.score++;
-                $session.asked++;
                 $reactions.answer("Верно!");
             } else {
-                $session.asked++;
                 $reactions.answer("Неверно. Правильный ответ: {{$session.country.value.name}}");
             }            
-        go!: /Letsplay
+        a: Продолжим?
+        
+        state: Да
+           intent: /да
+           go!: /Letsplay
+        state: Нет
+           intent: /нет
+           go!: /EndGame
 
     state: NoMatch
         event!: noMatch
         a: Это не похоже на ответ. Попробуйте еще раз.
 
-    state: endGame
+    state: EndGame
         intent: /стоп
-        a: Твой результат Игра окончена. Твой результат {{$session.score}} из {{$session.asked}}.
+        a: Спасибо за игру! Твой результат {{$session.score}} из {{$session.asked}}.
         a: Пока!
         EndSession:
 
